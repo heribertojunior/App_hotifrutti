@@ -9,6 +9,6 @@ abstract class AppPages {
       name: Routes.dashboard,
       page: () => const DashboardPage(),
       binding: DashboardBinding(),
-    )
+    ),
   ];
 }

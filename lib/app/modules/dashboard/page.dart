@@ -1,4 +1,5 @@
 import 'package:app_hortifrutti_pratico/app/modules/dashboard/controller.dart';
+import 'package:app_hortifrutti_pratico/app/modules/home/page.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -8,11 +9,6 @@ class DashboardPage extends GetView<DashboardController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: const Text(
-            'DashboardPage',
-          ),
-        ),
         bottomNavigationBar: Obx(() => NavigationBar(
               onDestinationSelected: controller.changePageIndex,
               selectedIndex: controller.currentPageIndex.value,
@@ -34,8 +30,8 @@ class DashboardPage extends GetView<DashboardController> {
         body: Obx(
           () => IndexedStack(
             index: controller.currentPageIndex.value,
-            children: [
-              Text('Inicio'),
+            children: const [
+              HomePage(),
               Text('Meu Perfil'),
               Text('Meus Pedidos'),
             ],

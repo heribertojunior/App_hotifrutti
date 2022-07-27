@@ -1,3 +1,4 @@
+import 'package:app_hortifrutti_pratico/app/core/theme/app_theme.dart';
 import 'package:app_hortifrutti_pratico/app/modules/home/controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -10,28 +11,24 @@ class HomePage extends GetView<HomeController> {
     return Scaffold(
       appBar: AppBar(
           title: const Center(
-        child: Text('Flutter Demo Home Page'),
-      )),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
-            ),
-            Obx(() => Text(
-                  //função obx para escutar alteração
-                  controller.counter.value.toString(),
-                  style: Theme.of(context).textTheme.headline4,
-                )),
-          ],
+        child: Text(
+          'Hotifruti Prático',
+          style: textA1,
         ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: controller.incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ),
+      )),
+      body: ListView(children: const [
+        ListTile(
+          title: Text(
+            "Horti Verde",
+            style: textA2,
+          ),
+          leading: FlutterLogo(),
+          trailing: Text(
+            "Aberto",
+            style: aberto,
+          ),
+        ),
+      ]),
     );
   }
 }
